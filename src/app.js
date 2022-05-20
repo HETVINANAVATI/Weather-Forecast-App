@@ -5,7 +5,7 @@ const forecast=require("./utils/forecast.js");
 const hbs=require('hbs');
 
 const app=express();
-
+const port=process.env.PORT || 3000
 app.set("view engine","hbs");
 const view_path=path.join(__dirname,"../templates/views");
 const publicdirpath=path.join(__dirname,"../public")
@@ -50,6 +50,7 @@ app.get("*",(req,res)=>{
     res.render("404",{name:"Hetvi",title:"About Me",errorMessage:"No such page available"});
 })
 
-app.listen(3000,()=>{
-    console.log("http://localhost:3000")
+app.listen(port,()=>{
+   // console.log("http://localhost:3000")
+   console.log(port)
 })
